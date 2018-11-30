@@ -10,13 +10,13 @@ describe DockingStation do
   end
 
   it "gets working bike" do
-    bike = Bike.new
-    expect(bike).to be_working
+    bikes = Bike.new
+    expect(bikes).to be_working
   end
 
   it "docks a bike" do
-    bike = Bike.new
-    expect (subject.dock_bike(bike)).equal? bike
+    bikes = Bike.new
+    expect (subject.dock_bike(bikes)).equal? bikes
   end
 
 it "raise an error if no bike" do
@@ -24,9 +24,9 @@ it "raise an error if no bike" do
 end
 
 it "raise an error if docking station is full" do
-  bike = Bike.new
-  subject.dock_bike(bike)
-  expect{subject.dock_bike(bike)}.to raise_error "There is no space available"
+  bikes = Bike.new
+  subject.dock_bike(bikes)
+  expect{subject.dock_bike(bikes)}.to raise_error "There is no space available"
 end
 
 end
