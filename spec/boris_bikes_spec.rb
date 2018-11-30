@@ -9,6 +9,9 @@ describe DockingStation do
     expect(subject).to respond_to :dock_bike
   end
 
+  it "should have a DEFAULT_CAPACITY" do
+    expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+  end
 
   it "gets working bike" do
     bikes = Bike.new
