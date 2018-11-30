@@ -9,6 +9,7 @@ describe DockingStation do
     expect(subject).to respond_to :dock_bike
   end
 
+
   it "gets working bike" do
     bikes = Bike.new
     expect(bikes).to be_working
@@ -25,8 +26,9 @@ end
 
 it "raise an error if docking station is full" do
   bikes = Bike.new
-  subject.dock_bike(bikes)
+  20.times{subject.dock_bike(bikes)}
   expect{subject.dock_bike(bikes)}.to raise_error "There is no space available"
 end
+
 
 end
